@@ -235,6 +235,12 @@ namespace SamsChannelEditor.UI
 
         private void FMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+			if (MessageBox.Show ("Do you want to save ?", "title", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+			   
+				MessageBox.Show ("Saving...");
+				Save ();
+			}
+		
             CloseAll();
         }
 
